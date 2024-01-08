@@ -3,8 +3,10 @@ const showBookCatalog = document.querySelector(".dialog + button")
 const closeButton = document.querySelector("dialog button")
 const checked = document.getElementById("toggle")
 const closeButtonClose = document.querySelector(".closebutton-1")
+const nav = document.getElementById("nav")
 const submitButton = document.querySelector(".button-submit")
 const container = document.querySelector(".modal-container")
+const header = document.getElementById("bars");
 const closebuttonbtn = document.querySelector(".closebutton-2")
 const checkbox = document.getElementById("check")
 
@@ -12,28 +14,13 @@ showBookCatalog.addEventListener("click", () => {
     dialog.showModal();
 });
 
-closeButtonClose.addEventListener("click", () => {
+closeButton.addEventListener("click", () => {
     dialog.close();
 })
 
-// const KeyBoardEvent = (e) => {
-//         if (e.key === 'Escape') closeAllDialog()
-// }
-
-// window.onclick = function(event) {
-//     if (event.target == dialog) {
-//       dialog.style.display = 'none';
-//     }
-// }
-
-// const openBook = () => {
-//     bookForm.style.display = "block";
-//     const cancel = document.querySelector(".cancel");
-//     cancel.addEventListener("click", (e) => {
-//         e.preventDefault();
-//         closeBook();
-//     })
-// };
+header.addEventListener('click', () => {
+  nav.classList.toggle('show');
+});
 
 const myLibrary = [];
 
@@ -74,7 +61,7 @@ function displayBook(){
 
 }
 
-// Function to remove a book
+// Function to remove a book from page
 function removeBook(index) {
     myLibrary.splice(index, 1);
     displayBook();

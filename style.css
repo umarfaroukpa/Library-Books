@@ -5,12 +5,6 @@
    
 }
 
-body{
-  min-height: 100vh;
-  background-color: #a7ba86;  
-  display: flex;
-  flex-direction: column;
-}
 
 a{
   color: aliceblue; 
@@ -19,15 +13,53 @@ a{
 }
 
 nav{
-  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between; 
   padding: 0 25px 0;
 }
 
+nav ul{
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul a:hover{
+  text-decoration: underline;
+  text-decoration-color: red;
+  pointer-events: painted;
+}
 
 header{
+  display: flex;
+  flex-direction: column;
   padding: 16px;
   background-color: #889d63;
+}
+
+.bars {
+  background-color: transparent;
+  border: 10px;
+  color: rgb(135, 201, 36);
+  cursor: pointer;
+  font-size: 30px;
+  margin-left: -180px;
+  margin-top: -6px;
+  float: left;
+  display: none;
+}
+
+.bars:focus {
+  outline: none;
+}
+
+
+body{
+  min-height: 100vh;
+  background-color: #a7ba86;  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1 1 auto;
 }
 
 .button-submit{
@@ -40,7 +72,7 @@ header{
 }
 
 dialog{
-  position: absolute; 
+  position: relative; 
   top: 50%;
   left: 78%;
   transform: translate(-50%, -50%);  
@@ -76,7 +108,7 @@ dialog{
 }   
  
 .closebutton-2{
-  position: absolute;
+  position: relative;
   top: 75%;
   left: 20%; 
   cursor: pointer;
@@ -105,7 +137,7 @@ dialog{
 
 .inner-items {
   position: relative;
-  top: 60PX;
+  top: 20PX;
   left: 150PX; 
   color: aliceblue;
   font-size: 18px;
@@ -139,3 +171,99 @@ footer{
   text-align: center;
 } 
 
+@media (max-width: 480px){
+
+  body{
+    min-height: 100vh;
+  }
+
+ nav ul{
+  display: none;
+  flex-direction: column;
+  width: 100%;
+ }
+
+ header{
+  background-color: #889d63;
+  padding: 15px;
+  
+ }
+
+ ul.show{
+  display: flex;
+ }
+
+ .bars{
+  display: block;
+  
+ }
+
+ .button-submit{
+  padding-top: -20px;
+ }
+  
+  dialog{
+    width: 250px;
+    height: 280px;
+    margin-inline-start: -130px;
+    margin-top: -35px;
+  
+  }
+
+  .closebutton-2{
+    margin-inline-start: -60px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .inner-items{
+    margin-top: 225px;
+    margin-inline-start: 0px;
+    width: 200px;
+    line-height: 20px;
+  }
+
+  h1{
+    font-size: 14px;
+  }
+
+  .closebutton-1{
+    margin-top: -9px;
+    background-color: rgb(135, 201, 36);
+    width: 18%;
+  }
+
+  #modal-container{
+    line-height: 30px;
+  }
+}
+
+@media screen and  (max-width: 760px){
+
+  dialog{
+    width: 370px;
+    height: 370px;
+    margin-left: -50px;
+  }
+
+ .closebutton-2{
+    margin-left: -110px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .closebutton-1{
+    width: 14%;
+  }
+
+  h1{
+    font-size: 19px;
+  }
+
+  .inner-items{
+    margin-left: -110px;
+    width: 250px;
+  }
+
+}
+  
