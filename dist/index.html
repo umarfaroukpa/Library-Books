@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>MyBookshelf - Personal Library Manager</title>
+  <link rel="stylesheet" crossorigin href="/assets/index-V4Ulm92a.css">
+</head>
+<body>
+    <header>
+        <button id="bars" class="bars"><i class="fas fa-bars"></i></button>
+        <div class="logo">
+            <i class="fas fa-book-open"></i>
+            <span>MyBookshelf</span>
+        </div>
+        <nav>
+           <ul id="nav">
+            <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#"><i class="fas fa-book"></i> Collection</a></li>
+            <li><a href="http://google.com" target="_blank"><i class="fas fa-search"></i> Search</a></li>
+           </ul>
+        </nav>       
+    </header>
+   <main>
+        <div class="stats-bar">
+            <div class="stat">
+                <span id="total-books">0</span>
+                <p>Total Books</p>
+            </div>
+            <div class="stat">
+                <span id="books-read">0</span>
+                <p>Books Read</p>
+            </div>
+            <div class="stat">
+                <span id="pages-read">0</span>
+                <p>Pages Read</p>
+            </div>
+        </div>
+
+        <dialog id="book-dialog">
+            <div class="dialog-header">
+                <h2>Add New Book</h2>
+                <button class="close-button"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="modal-container">
+                <form id="add-book-form">
+                    <div class="form-group">
+                        <label for="title">Book Title</label>
+                        <input type="text" id="title" placeholder="Enter book title" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="author">Author</label>
+                        <input type="text" id="author" placeholder="Enter author name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pages">Number of Pages</label>
+                        <input type="number" id="pages" placeholder="Enter number of pages" min="1" required>
+                    </div>
+                
+                    <div class="form-group toggle-container">
+                        <label for="read">Have you read this book?</label>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="read" class="checkbox">
+                            <label for="read" class="toggle-label"></label>
+                        </div>
+                    </div>
+                    
+                    <button class="submit-button" type="submit">
+                        <i class="fas fa-plus"></i> Add Book
+                    </button>
+                </form>
+            </div>              
+        </dialog>
+
+        <button id="add-button" class="floating-button">
+            <i class="fas fa-plus"></i>
+        </button>  
+
+        <div class="library-container">
+            <h1>My Book Collection</h1>
+            <div id="book-collection" class="book-collection"></div>
+        </div>
+   </main>
+   <footer>
+       <p>Created by Umar Frouk Ilyas &copy; <span id="current-year">2023</span></p>
+       <div class="social-links">
+           <a href="#"><i class="fab fa-github"></i></a>
+           <a href="#"><i class="fab fa-twitter"></i></a>
+           <a href="#"><i class="fab fa-linkedin"></i></a>
+       </div>
+   </footer>
+   
+   <script src="main.js"></script>
+</body>
+</html>
